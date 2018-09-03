@@ -1,0 +1,22 @@
+{
+  "name": "translatr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clipboardy": "^1.2.3",
+    "co": "^4.6.0",
+    "google-translate-api": "^2.3.0",
+    "iohook": "^0.2.0",
+    "node-notifier": "^5.2.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "robotjs": "^0.5.1",
+    "rxjs": "^6.3.1"
+  }
+}

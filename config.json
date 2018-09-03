@@ -1,0 +1,13 @@
+{
+    "translation": {
+        "target": "ru"
+    },
+    "anki": {
+        "deck": "English",
+        "model": "Basic",
+        "fields": {
+            "text": "Front",
+            "translation": "Back"
+        }
+    }
+}
