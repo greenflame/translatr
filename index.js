@@ -13,21 +13,25 @@ const notify = require('./notify');
 
 
 fromEvent(ioHook, 'keypress')
-    .pipe(filter(i => i.ctrlKey && i.keychar == 96))
+    .pipe(filter(i => i.ctrlKey && (i.keychar == 32 || i.keychar == 96)))
     .subscribe(_ => co(translateTextUnderCursor));
 
 fromEvent(notifier, 'click')
     .subscribe(opts => co(_ => saveToAnki(opts[1].title, opts[1].message)));
 
+let sleep = ms => new Promise(res => setTimeout(res, ms));
+
 function* translateTextUnderCursor() {
     try {
         robot.keyTap('c', 'control');
+        yield sleep(50);
+
         var text = trim(yield clipboardy.read());
         var translation = yield translate.google(text, config.translation.target);
 
         yield notify.message(translation, text, true);
     } catch (err) {
-        yield notify.error(err.message);
+        yield notify.error(err.message || err.code);
     }
 }
 
