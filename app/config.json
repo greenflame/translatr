@@ -1,6 +1,8 @@
 {
     "translation": {
-        "target": "ru"
+        "service": "yandex",
+        "target": "ru",
+        "apiKey": "trnsl.1.1.20181021T092154Z.991fe440acf9dc46.c0d1f47db454c238748f3119c8db8462699b8673"
     },
     "anki": {
         "deck": "English",
